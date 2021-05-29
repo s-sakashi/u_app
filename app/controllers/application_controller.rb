@@ -1,6 +1,4 @@
 class ApplicationController < ActionController::Base
 
-    def hello
-        render html: "Hello, World!!"
-    end
+    # ユーザーのログインを確認する
 end
