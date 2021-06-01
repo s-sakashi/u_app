@@ -68,7 +68,7 @@ h1, h2, h3, h4, h5, h6 {
 
   /* header */
 
-#logo {
+#header-logo {
     float: left;
     margin-right: 10px;
     font-size: 1.7em;
@@ -79,7 +79,25 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
   }
   
-  #logo:hover {
+  #header-logo:hover {
     // color: #ee3e61;
     text-decoration: none;
+  }
+
+  /* footer */
+
+footer {
+    margin-top: 45px;
+    padding-top: 5px;
+    border-top: 1px solid #eaeaea;
+    color: #777;
+    text-align: center;
+  }
+  
+  footer a {
+    color: #555;
+  }
+  
+  footer a:hover {
+    color: #222;
   }
