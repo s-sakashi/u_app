@@ -7,6 +7,8 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+require("jquery") // 追加
+import "bootstrap" // 追加
 
 Rails.start()
 Turbolinks.start()
