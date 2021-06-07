@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     if @user.save
       log_in @user
       flash[:success] = "登録完了、さあ温泉を探そう！"
-      redirect_to @user
+      redirect_back_or @user
     else
       render 'new'
     end
@@ -43,7 +43,8 @@ class UsersController < ApplicationController
 
     def logged_in_user
       unless logged_in?
-        flash[:danger] = "温泉に入る前に、まずは服を脱いでから（※ログインが必要です）"
+        store_location
+        flash[:danger] = "温泉に入る前に、まずは服を脱ごう（※ログインが必要です）"
         redirect_to login_url
       end
     end
@@ -51,6 +52,6 @@ class UsersController < ApplicationController
     # 正しいユーザーかどうか確認
     def correct_user
       @user = User.find(params[:id])
-      redirect_to(root_url) unless @user == current_user
+      redirect_to(root_url) unless current_user?(@user)
     end
 end
