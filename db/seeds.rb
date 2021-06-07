@@ -2,7 +2,8 @@
 User.create!(name:  "Sakashi",
     email: "sakashi@uapp.com",
     password:              "foobar",
-    password_confirmation: "foobar")
+    password_confirmation: "foobar",
+    admin: true)
 
 # 追加のユーザーをまとめて生成する
 99.times do |n|
