@@ -3,6 +3,7 @@ sakashi:
   name: Sakashi
   email: sakashi@example.com
   password_digest: <%= User.digest('password') %>
+  admin: true
 
 kusashi:
   name: Kusashi
