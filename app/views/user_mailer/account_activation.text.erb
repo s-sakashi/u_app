@@ -1,3 +1,10 @@
-User#account_activation
+<%= @user.name %>様
 
-<%= @greeting %>, find me in app/views/user_mailer/account_activation.text.erb
+この度はUアプリにご登録いただきありがとうございます。
+現在は仮登録の状態です。下記URLをクリックしていただくと本登録が完了いたします。
+
+
+URL：<%= edit_account_activation_url(@user.activation_token, email: @user.email) %>
+
+
+- U ~温泉情報アプリ~ -
