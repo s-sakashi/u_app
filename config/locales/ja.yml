@@ -8,6 +8,5 @@ ja:
         password_confirmation: パスワード（確認用）
 
   will_paginate:
-    previous_label: &lt 前
-    next_label: 次 &gt
-    # page_gap: …
+    previous_label: "&#8592; 前へ"
+    next_label:  "次へ &#8594;"
