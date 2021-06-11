@@ -6,3 +6,8 @@ ja:
         email: メールアドレス 
         password: パスワード
         password_confirmation: パスワード（確認用）
+
+  will_paginate:
+    previous_label: &lt 前
+    next_label: 次 &gt
+    # page_gap: …
