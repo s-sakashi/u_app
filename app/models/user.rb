@@ -61,7 +61,7 @@ class User < ApplicationRecord
     end
 
     # パスワード再設定のメールを送信する
-    def send_passwordreset_email
+    def send_password_reset_email
         UserMailer.password_reset(self).deliver_now
     end
 
