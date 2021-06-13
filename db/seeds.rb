@@ -19,3 +19,11 @@ User.create!(name:  name,
       activated: true,
       activated_at: Time.zone.now)
 end
+
+
+# 温泉データを作成する
+Hotspring.create!(
+    name: "道後温泉",
+    address: "愛媛県松山市道後湯之町５−６",
+    ph: 9.1,
+    quality: "アルカリ性単純泉")
