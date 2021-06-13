@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  address: MyString
-  ph: 1
-  quality: MyString
+dogo:
+  name: "道後温泉"
+  address: "愛媛県松山市道後湯之町５−６"
+  ph: 9.1
+  quality: "アルカリ性単純泉"
 
-two:
-  name: MyString
-  address: MyString
-  ph: 1
-  quality: MyString
+arima:
+  name: "有馬温泉"
+  address: "兵庫県神戸市北区有馬町"
+  ph: 11.3
+  quality: "単純性温泉" 
