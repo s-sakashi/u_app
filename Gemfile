@@ -12,6 +12,8 @@ gem 'bootstrap-will_paginate', '1.0.0'
 gem 'bootstrap-sass', '3.4.1'
 gem 'jquery-rails', '4.4.0'
 gem 'rails-i18n'
+gem 'better_errors'
+gem 'binding_of_caller'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets

@@ -1,0 +1,18 @@
+<div class="search-form">
+    <%= form_with(scope: :search, url: hotsprings_path, method: :get, local: true) do |f| %>
+    <div class="field">
+        <%= f.label :name %>
+        <%= f.text_field :name, value: @search_params[:name] %>
+
+        <%= f.label :address %>
+        <%= f.text_field :address, value: @search_params[:address] %>
+
+        <%= f.label :ph %>
+        <%= f.text_field :ph, value: @search_params[:ph] %>
+
+        <%= f.label :quality %>
+        <%= f.text_field :quality, value: @search_params[:quality] %>
+    </div>
+    <% end %>
+</div>
+
