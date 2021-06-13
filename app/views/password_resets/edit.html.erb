@@ -10,9 +10,9 @@
       <%= hidden_field_tag :email, @user.email %>
 
       <%= f.label :password %>
-      <%= f.password_field :password, "パスワード", class: 'form-control' %>
+      <%= f.password_field :password, class: 'form-control' %>
 
-      <%= f.label :password_confirmation, "パスワード（確認用）" %>
+      <%= f.label :password_confirmation %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
       <%= f.submit "パスワード再設定", class: "btn btn-primary" %>
