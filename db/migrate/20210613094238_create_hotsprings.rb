@@ -3,7 +3,7 @@ class CreateHotsprings < ActiveRecord::Migration[6.1]
     create_table :hotsprings do |t|
       t.string :name
       t.string :address
-      t.integer :ph
+      t.float :ph
       t.string :quality
 
       t.timestamps
