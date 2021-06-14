@@ -8,7 +8,7 @@ class Hotspring < ApplicationRecord
 
     def self.search(search)
         if search
-            Hotspring.where(['name LIKE ?', "%#{search}%"])
+            Hotspring.where(['name LIKE ? OR address LIKE ?', "%#{search}%", "%#{search}%"])
         else
             Hotspring.all
         end
