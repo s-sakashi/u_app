@@ -1,7 +1,7 @@
 class HotspringsController < ApplicationController
 
     def index
-        @hotsprings = Hotspring.paginate(page: params[:page])
+        @hotsprings = Hotspring.search(params[:search])
     end
     
     def show

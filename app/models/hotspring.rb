@@ -5,4 +5,12 @@ class Hotspring < ApplicationRecord
         greater_than_or_equal_to: 0, less_than_or_equal_to: 14}
     validates :quality, presence: true, length: { maximum: 10 }
 
+
+    def self.search(search)
+        if search
+            Hotspring.where(['name LIKE ?', "%#{search}%"])
+        else
+            Hotspring.all
+        end
+    end
 end
