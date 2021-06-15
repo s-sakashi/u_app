@@ -1,9 +1,10 @@
 <%= render 'search_form' %>
 
-<%# <%= will_paginate %> 
 
-<ul class="hotsprings">
-    <%= render @hotsprings %>
-</ul>
-
-<%# <%= will_paginate %>
+<% if @search_params.blank? %>
+    <p>検索結果がありませんでした。</p>
+<% else %>
+    <% @hotsprings.each do |hotspring| %>
+        <%= hotspring.name %>
+    <% end %>
+<% end %>

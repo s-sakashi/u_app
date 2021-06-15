@@ -6,11 +6,10 @@ class Hotspring < ApplicationRecord
     validates :quality, presence: true, length: { maximum: 10 }
 
 
-    def self.search(search)
-        if search
-            Hotspring.where(['name LIKE ? OR address LIKE ?', "%#{search}%", "%#{search}%"])
-        else
-            Hotspring.all
-        end
+    scope :search, -> (search_params) do
+        return if search_params.blank?
+        name_like(search_params[:name])
     end
+
+    scope :name_like, -> (name) { where('name LIKE ?', "%#{name}%") if name.present? }
 end
