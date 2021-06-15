@@ -10,9 +10,9 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   resources :users
-  resources :hotsprings do
+  resources :hotsprings, only: [:index, :show ] do
     collection do
-      get :index
+      get :search
     end
   end
   resources :account_activations, only: [:edit]

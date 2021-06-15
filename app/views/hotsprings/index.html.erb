@@ -1,10 +1,2 @@
-<%= render 'search_form' %>
-
-
-<% if @search_params.blank? %>
-    <p>検索結果がありませんでした。</p>
-<% else %>
-    <% @hotsprings.each do |hotspring| %>
-        <%= hotspring.name %>
-    <% end %>
-<% end %>
+<%= render 'shared/hotspring_form' %>
+<%= render 'shared/search_result' %>

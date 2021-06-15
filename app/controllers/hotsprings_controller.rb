@@ -4,6 +4,11 @@ class HotspringsController < ApplicationController
         @search_params = hotspring_search_params
         @hotsprings = Hotspring.search(@search_params)
     end
+
+    def search
+        @search_params = hotspring_search_params
+        @hotsprings = Hotspring.search(@search_params)
+    end
     
     def show
         @hotspring = Hotspring.find(params[:id])
