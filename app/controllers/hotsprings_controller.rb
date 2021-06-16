@@ -4,11 +4,6 @@ class HotspringsController < ApplicationController
         @search_params = hotspring_search_params
         @hotsprings = Hotspring.search(@search_params)
     end
-
-    def search
-        @search_params = hotspring_search_params
-        @hotsprings = Hotspring.search(@search_params)
-    end
     
     def show
         @hotspring = Hotspring.find(params[:id])
@@ -18,7 +13,7 @@ class HotspringsController < ApplicationController
     private
 
     def hotspring_search_params
-        params.fetch(:search, {}).permit(:name)
+        params.fetch(:search, {}).permit(:name, :ph_min, :ph_max)
     end
 
 end

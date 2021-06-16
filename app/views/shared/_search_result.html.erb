@@ -1,6 +1,4 @@
-<% if @search_params.blank? %>
-    <p>検索結果がありませんでした。</p>
-<% else %>
+<% unless @search_params.blank? %>
     <% @hotsprings.each do |hotspring| %>
         <%= hotspring.name %>
     <% end %>

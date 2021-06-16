@@ -2,7 +2,11 @@
     <%= form_with(scope: :search, url: hotsprings_path, method: :get, local:true ) do |f| %>
         <%= f.label :name, "温泉名" %>
         <%= f.text_field :name, value: @search_params[:name] %>
+        <%= f.label :ph_min, "pH" %>
+        <%= f.text_field :ph_min, value: @search_params[:ph_min] %>
+        <p>〜</p>
+        <%= f.text_field :ph_max, value: @search_params[:ph_max] %>
         <%= submit_tag "検索する", class: "btn btn-primary"%>
-    <% end %>    
+    <% end %>
 </div>
 
