@@ -10,6 +10,6 @@ class HomePagesController < ApplicationController
   private
 
     def hotspring_search_params
-        params.fetch(:search, {}).permit(:name, :ph_min, :ph_max)
+        params.fetch(:search, {}).permit(:name, :address, :ph_min, :ph_max)
     end
 end
