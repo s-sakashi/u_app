@@ -8,7 +8,9 @@ class Hotspring < ApplicationRecord
 
     scope :search, -> (search_params) do
         return if search_params.blank?
-        return if search_params[:address] == "---"
+        if search_params[:address] == "---"
+            search_params[:address] = ""
+        end
         name_like(search_params[:name])
         .address_like(search_params[:address])
         .ph_from(search_params[:ph_min])
