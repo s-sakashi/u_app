@@ -1,6 +1,18 @@
-<div id="hotspring-<%= hotspring.id %>">
-    <h2><%= hotspring.name %></h2>
-    <li>
-        <span>住所：<%= hotspring.address %></span>
-    </li>
+<div class="hotspring-box" id="hotspring-<%= hotspring.id %>">
+    <div class="img"></div>
+    <div class="">
+        <h2><%= hotspring.name %></h2>
+        <li>
+            <span>住所：<%= hotspring.address %></span>
+        </li>
+        <li>
+            <span>評価：</span>
+        </li>
+        <li>
+            <span>泉質：<%= hotspring.quality %> </span>
+        </li>
+        <li>
+            <span>pH：<%= hotspring.ph %></span>
+        </li>
+    </div>
 </div>
