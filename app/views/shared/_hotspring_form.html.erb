@@ -1,15 +1,19 @@
-<%= form_with(scope: :search, url: hotsprings_path,  method: :get, local:true ) do |f| %>
-    <div class="form-group">
-        <div class="form-inline">
-            <%= f.label :name, "温泉名" %>
-            <%= f.text_field :name, value: @search_params[:name], class: "form-control", placeholder:"道後温泉" %>
-            <%= f.label :address, "都道府県" %>
-            <%= f.select :address, Ride.ride_areas.keys, {}, class: "form-control", placeholder:"東京都"  %>
-            <%= f.label :ph_min, "pH" %>
-            <%= f.text_field :ph_min, value: @search_params[:ph_min], class: "form-control", placeholder:"0"  %>〜
-            <%= f.text_field :ph_max, value: @search_params[:ph_max], class: "form-control", placeholder:"14"  %>
-            <%= submit_tag "検索する", class: "btn btn-primary", style:"float:right;" %>
+<div class="hotspring-form">
+    <%= form_with(scope: :search, url: hotsprings_path,  method: :get, local:true ) do |f| %>
+        <div class="form-group">
+            <div class="form-inline">
+                <%= f.label :name, "温泉名" %>
+                <%= f.text_field :name, value: @search_params[:name], class: "form-control", placeholder:"道後温泉" %>
+                <%= f.label :address, "都道府県" %>
+                <%= f.select :address, Ride.ride_areas.keys, {}, class: "form-control", placeholder:"東京都"  %>
+                <%= f.label :ph_min, "pH" %>
+                <%= f.text_field :ph_min, value: @search_params[:ph_min], class: "form-control", placeholder:"0"  %>〜
+                <%= f.text_field :ph_max, value: @search_params[:ph_max], class: "form-control", placeholder:"14"  %>
+                <div class="btn-group ">
+                    <%= submit_tag "検索する", class: "btn btn-primary" %>
+                </div>
+            </div>
         </div>
-    </div>
-<% end %>
+    <% end %>
+</div>
 
