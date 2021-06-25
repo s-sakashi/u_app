@@ -1,5 +1,5 @@
 <% unless @search_params.blank? %>
-    <% @hotsprings.each do |hotspring| %>
-        <%= hotspring.name %>
-    <% end %>
+<div class="hotsprings">
+    <%= render @hotsprings %>
+</div>
 <% end %>
