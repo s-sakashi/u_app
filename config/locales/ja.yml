@@ -6,6 +6,11 @@ ja:
         email: メールアドレス 
         password: パスワード
         password_confirmation: パスワード（確認用）
+      hotspring:
+        name: 温泉名
+        address: 住所
+        quality: 泉質
+        ph: pH
 
   will_paginate:
     previous_label: "&#8592; 前へ"

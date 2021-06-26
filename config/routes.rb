@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'password_resets/edit'
   get 'sessions/new'
   get 'users/new'
+  get 'hotsprings/new'
   root 'home_pages#home'
   get '/about', to: 'home_pages#about'
   get '/signup', to: 'users#new'
@@ -10,11 +11,7 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   resources :users
-  resources :hotsprings, only: [:index, :show ] do
-    collection do
-      get :search
-    end
-  end
+  resources :hotsprings 
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
 end
