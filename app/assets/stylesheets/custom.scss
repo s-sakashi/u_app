@@ -204,8 +204,19 @@ input {
   }
 }
 
+/* Hotsprings index */
+
+
 
 /* search form */
+.form-box {
+  position: fixed;
+  background-color: #fff;
+  justify-content: space-between;
+  margin-bottom: auto;
+}
+
+
 .hotspring-form {
   padding: 3px 3px;
   margin: 7px;
