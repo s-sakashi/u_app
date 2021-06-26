@@ -1,0 +1,31 @@
+<div class="row">
+    <% if @hotspring.errors.any? %>
+        <div id="error_explanation">
+            <div class="alert alert-danger">
+                入力内容に誤りがあります：<%= @hotspring.errors.count %>箇所
+            </div>
+            <ul>
+                <% @hotspring.errors.full_messages.each do |msg| %>
+                    <li><%= msg %> </li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+    <div class="col-md-6 col-md-offset-3">
+        <%= form_with(model: @hotspring, local: true) do |f| %>
+            <%= f.label :name, "温泉名" %>
+            <%= f.text_field :name, class: "form-control", placeholder:"道後温泉" %>
+
+            <%= f.label :address, "住所" %>
+            <%= f.text_field :address, class: "form-control", placeholder:"愛媛県松山市道後湯之町５−６"  %>
+
+            <%= f.label :quality, "泉質" %>
+            <%= f.text_field :quality, class: "form-control", placeholder:"アルカリ性単純泉"  %>
+
+            <%= f.label :ph, "pH" %>
+            <%= f.number_field :ph, step: "0.1", class: "form-control", placeholder:"9.1"  %>
+
+            <%= f.submit "登録する", class: "btn btn-primary" %>
+        <% end %>
+    </div>
+</div>
