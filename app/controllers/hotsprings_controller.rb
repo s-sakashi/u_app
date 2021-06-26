@@ -22,6 +22,12 @@ class HotspringsController < ApplicationController
         end
     end
 
+    def destroy
+        Hotspring.find(params[:id]).destroy
+        flash[:succsess] = "削除完了"
+        redirect_to root_url
+    end
+
 
     private
 

@@ -3,7 +3,7 @@
         <%= image_tag hotspring.images[0] if hotspring.images.attached? %>
     </div>
     
-    <div class="">
+    <div class="hotspring-info">
         <h2><%= hotspring.name %></h2>
         <li>
             <span>住所：<%= hotspring.address %></span>
@@ -17,5 +17,9 @@
         <li>
             <span>pH：<%= hotspring.ph %></span>
         </li>
+        <% if current_user.admin? %>
+            <li><%= link_to "削除", hotspring, method: :delete,
+                     data: { confirm: "本当に削除しますか？" } %></li>
+        <% end %>
     </div>
 </div>
