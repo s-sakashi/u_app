@@ -1,5 +1,5 @@
 class Hotspring < ApplicationRecord
-    # has_many_attached
+    has_many_attached :images
     validates :name, presence: true, length: { maximum: 10 }
     validates :address, presence: true, length: {maximum: 50 }
     validates :ph, presence: true, numericality: {

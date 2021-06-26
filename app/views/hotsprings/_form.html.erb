@@ -24,6 +24,9 @@
 
             <%= f.label :ph, "pH" %>
             <%= f.number_field :ph, step: "0.1", class: "form-control", placeholder:"9.1"  %>
+            <span class="images">
+                <%= f.file_field :images, multiple: true %>
+            </span>
 
             <%= f.submit "登録する", class: "btn btn-primary" %>
         <% end %>

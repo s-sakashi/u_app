@@ -27,7 +27,7 @@ class HotspringsController < ApplicationController
 
         def hotspring_params
         params.require(:hotspring).permit(:name, :address, :quality,
-                        :ph)
+                        :ph, images: [])
         end
 
         def hotspring_search_params
