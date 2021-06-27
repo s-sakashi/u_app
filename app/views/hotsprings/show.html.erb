@@ -12,7 +12,7 @@
             <% if current_user.admin? %>
             <li><%= link_to "削除", @hotspring, method: :delete,
                      data: { confirm: "本当に削除しますか？" } %></li>
-            <li><%= link_to "編集", "#" %></li>
+            <li><%= link_to "編集", edit_hotspring_path(@hotspring) %></li>
             <% end %>
         </section>
     </aside>

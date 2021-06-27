@@ -22,6 +22,20 @@ class HotspringsController < ApplicationController
         end
     end
 
+    def edit
+        @hotspring = Hotspring.find(params[:id])
+    end
+
+    def update
+        @hotspring = Hotspring.find(params[:id])
+        if @hotspring.update(hotspring_params)
+            flash[:success] = "更新完了"
+            redirect_to @hotspring
+        else
+            render 'edit'
+        end
+    end
+
     def destroy
         Hotspring.find(params[:id]).destroy
         flash[:success] = "削除完了"
