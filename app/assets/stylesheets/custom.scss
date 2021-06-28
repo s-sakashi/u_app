@@ -205,7 +205,20 @@ input {
 }
 
 /* Hotsprings index */
+.hotspring-box {
+  height: 300px;
+  img {
+    float: left;
+    height:  90%;
+    padding: 30px ;
+  }
+}
 
+.hotspring-info {
+  padding: 30px;
+  float: left;
+  height: 100%;
+}
 
 
 /* search form */

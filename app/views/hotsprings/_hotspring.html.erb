@@ -1,16 +1,9 @@
-<div class="hotspring-box" id="hotspring-<%= hotspring.id %>">
-
-    <div class="hotspring-image">
-        <%= image_tag hotspring.images[0] if hotspring.images.attached? %>
-    </div>
-    
+<div class="w-auto hotspring-box",  id="hotspring-<%= hotspring.id %>">
+    <%= image_tag hotspring.images[0], class: "hotspring-thumbnail" if hotspring.images.attached? %>
     <div class="hotspring-info">
-        <h2><%= link_to hotspring.name, hotspring %></h2>
+        <h3 class="hotspring-title"><%= link_to hotspring.name, hotspring %></h3>
         <li>
             <span>住所：<%= hotspring.address %></span>
-        </li>
-        <li>
-            <span>評価：</span>
         </li>
         <li>
             <span>泉質：<%= hotspring.quality %> </span>
@@ -18,10 +11,13 @@
         <li>
             <span>pH：<%= hotspring.ph %></span>
         </li>
+        <li>
+            <span>評価：</span>
+        </li>
         <% if current_user.admin? %>
             <li><%= link_to "編集", edit_hotspring_path(hotspring) %></li>
             <li><%= link_to "削除", hotspring, method: :delete,
-                     data: { confirm: "本当に削除しますか？" } %></li>
+                    data: { confirm: "本当に削除しますか？" } %></li>
         <% end %>
     </div>
 </div>
