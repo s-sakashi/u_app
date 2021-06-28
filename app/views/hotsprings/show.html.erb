@@ -1,19 +1,20 @@
 <div class="row">
-    <aside class="col-md-4">
-        <section class="hotspring_info">
-            <h1>
-                <%= @hotspring.name %>
-            </h1>
-            <ul>
-                <li>住所：<%= @hotspring.address %></li>
-                <li><span>泉質：<%= @hotspring.quality %></li>
-                <li>pH：<%= @hotspring.ph %></li>
-            </ul>
-            <% if current_user.admin? %>
-            <li><%= link_to "削除", @hotspring, method: :delete,
-                     data: { confirm: "本当に削除しますか？" } %></li>
-            <li><%= link_to "編集", edit_hotspring_path(@hotspring) %></li>
-            <% end %>
-        </section>
-    </aside>
+    <section class="hotspring-top">
+        <h1><%= @hotspring.name %></h1>
+        <h2>住所：<%= @hotspring.address %></h2>
+    </section>
+    <hr>
+    <section class="hotspring_info">
+            <li><span>泉質：<%= @hotspring.quality %></li>
+            <li>pH：<%= @hotspring.ph %></li>
+        <% if current_user.admin? %>
+        <li><%= link_to "編集", edit_hotspring_path(@hotspring) %></li>
+        <li><%= link_to "削除", @hotspring, method: :delete,
+                    data: { confirm: "本当に削除しますか？" } %></li>
+        <% end %>
+    </section>
+    <hr>
+    <section class="hotspring-bottom">
+    <p>レビュー欄</p>
+    </section>
 </div>
