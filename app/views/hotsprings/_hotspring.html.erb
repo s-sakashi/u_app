@@ -1,5 +1,9 @@
 <div class="w-auto hotspring-box",  id="hotspring-<%= hotspring.id %>">
-    <%= image_tag hotspring.images[0], class: "hotspring-thumbnail" if hotspring.images.attached? %>
+    <% if hotspring.images.attached? %>
+        <%= image_tag hotspring.images[0], class: "hotspring-thumbnail" %>
+    <% else %>
+        <%= image_tag 'hotspring_default_img.png', class: "hotspring-thumbnail" %>
+    <% end %>
     <div class="hotspring-info">
         <h3 class="hotspring-title"><%= link_to hotspring.name, hotspring %></h3>
         <li>

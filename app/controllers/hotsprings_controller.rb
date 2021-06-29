@@ -15,6 +15,7 @@ class HotspringsController < ApplicationController
 
     def create
         @hotspring = Hotspring.new(hotspring_params)
+        # @hotspring.images[0] = 'hotspring_default_img.png'
         if @hotspring.save
             redirect_to root_url
         else
