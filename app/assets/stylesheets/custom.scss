@@ -15,6 +15,10 @@ $gray-medium-light: #eaeaea;
 .navbar {
     background-color: #b7282e;
     color: #fff;
+    z-index: 100;
+    width: 100%;
+    position: absolute;
+    height: 30px;
 }
 
 #nav-tab  {
@@ -29,9 +33,7 @@ $gray-medium-light: #eaeaea;
 /* universal */
 
 body {
-    padding-top: 60px;
-  }
-  
+  padding-top: 50px;
   section {
     overflow: auto;
   }
@@ -47,6 +49,7 @@ body {
   .center h1 {
     margin-bottom: 10px;
   }
+}
 
 
   /* typography */
@@ -205,25 +208,52 @@ input {
 }
 
 /* Hotsprings index */
+
 .hotspring-box {
-  height: 300px;
-  border: 1px solid #cccccc;
-  margin: 20px;
-  img {
+  margin-bottom: 24px;
+  background-color: #fff;
+  display: flex;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .5);
+}
+
+.hotspring-left {
+  position: relative;
+  float: left;
+  width: 70%;
+  .hotspring-main-img-wrapper {
+    width: 511px;
+    height: 347px;
+    position: relative;
+    z-index: 99;
+    display: block;
+    img {
+      vertical-align: text-bottom;
+      position: absolute;
+      margin: auto;
+    }
+  }
+
+}
+
+
+.hotspring-right {
+  float: left;
+  width: 258px;
+  padding: 10px 15px 0;
+  height: 317px!important;
+  float: right;
+  position: relative;
+  .hotspring-name {
     float: left;
-    height:  90%;
-    padding: 30px ;
+    font-size: 17px;
+    line-height: 1;
+    margin: 10px 0;
   }
 }
 
-.hotspring-info {
-  padding: 30px;
-  float: left;
-  height: 100%;
-}
 
 .search-result-title {
-  margin-top: 100px;
+  margin-top: 40px;
   text-align: left;
 }
 
@@ -237,7 +267,8 @@ input {
 
 
 .hotspring-form {
+  background-color: #fff;
   padding: 3px 3px;
-  margin: 7px;
+  margin: 10px;
   box-shadow: 0 3px 5px 0 rgba(0, 0, 0, .5);
 }

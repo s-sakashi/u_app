@@ -1,27 +1,23 @@
 <div class="w-auto hotspring-box",  id="hotspring-<%= hotspring.id %>">
-    <% if hotspring.images.attached? %>
-        <%= image_tag hotspring.images[0], class: "hotspring-thumbnail" %>
-    <% else %>
-        <%= image_tag 'hotspring_default_img.png', class: "hotspring-thumbnail" %>
-    <% end %>
-    <div class="hotspring-info">
-        <h3 class="hotspring-title"><%= link_to hotspring.name, hotspring %></h3>
-        <li>
-            <span>住所：<%= hotspring.address %></span>
-        </li>
-        <li>
-            <span>泉質：<%= hotspring.quality %> </span>
-        </li>
-        <li>
-            <span>pH：<%= hotspring.ph %></span>
-        </li>
-        <li>
-            <span>評価：</span>
-        </li>
+    <div class="hotsping-left">
+        <div class="hotspring-main-img-wrapper">
+            <% if hotspring.images.attached? %>
+                <%= image_tag hotspring.images[0], class: "hotspring-main-img" %>
+            <% else %>
+                <%= image_tag 'hotspring_default_img.png', class: "hotspring-main-img" %>
+            <% end %>
+        </div>
+    </div>
+    <div class="hotspring-right">
+        <h2 class="hotspring-name"><%= link_to hotspring.name, hotspring %></h2>
+        <p>住所：<%= hotspring.address %>></p>
+        <p>泉質：<%= hotspring.quality %></p>
+        <p>pH：<%= hotspring.ph %></p>
+        <p>評価：</p>
         <% if current_user.admin? %>
-            <li><%= link_to "編集", edit_hotspring_path(hotspring) %></li>
-            <li><%= link_to "削除", hotspring, method: :delete,
-                    data: { confirm: "本当に削除しますか？" } %></li>
+            <p><%= link_to "編集", edit_hotspring_path(hotspring) %></p>
+            <p><%= link_to "削除", hotspring, method: :delete,
+                    data: { confirm: "本当に削除しますか？" } %></p>
         <% end %>
     </div>
 </div>
