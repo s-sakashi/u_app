@@ -211,6 +211,7 @@ input {
 
 .hotspring-box {
   margin-bottom: 24px;
+  width: 100%;
   background-color: #fff;
   display: flex;
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .5);
@@ -219,36 +220,34 @@ input {
 .hotspring-left {
   position: relative;
   float: left;
-  width: 70%;
-  .hotspring-main-img-wrapper {
-    width: 511px;
-    height: 347px;
+  width: 60%;
+}
+.hotspring-main-img-wrapper {
+    height: 100%;
     position: relative;
     z-index: 99;
     display: block;
     img {
+      height: 100%;
       vertical-align: text-bottom;
       position: absolute;
       margin: auto;
     }
-  }
-
 }
 
 
+
 .hotspring-right {
-  float: left;
-  width: 258px;
   padding: 10px 15px 0;
-  height: 317px!important;
+  height: 100%;
   float: right;
   position: relative;
-  .hotspring-name {
-    float: left;
-    font-size: 17px;
-    line-height: 1;
-    margin: 10px 0;
-  }
+}
+
+.hotspring-name {
+  font-size: 17px;
+  line-height: 1;
+  margin: 10px 0;
 }
 
 
@@ -268,7 +267,7 @@ input {
 
 .hotspring-form {
   background-color: #fff;
-  padding: 3px 3px;
+  padding: 2%;
   margin: 10px;
   box-shadow: 0 3px 5px 0 rgba(0, 0, 0, .5);
 }

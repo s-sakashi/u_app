@@ -1,5 +1,5 @@
 <div class="w-auto hotspring-box",  id="hotspring-<%= hotspring.id %>">
-    <div class="hotsping-left">
+    <div class="hotspring-left">
         <div class="hotspring-main-img-wrapper">
             <% if hotspring.images.attached? %>
                 <%= image_tag hotspring.images[0], class: "hotspring-main-img" %>
@@ -10,7 +10,7 @@
     </div>
     <div class="hotspring-right">
         <h2 class="hotspring-name"><%= link_to hotspring.name, hotspring %></h2>
-        <p>住所：<%= hotspring.address %>></p>
+        <p>住所：<%= hotspring.address %></p>
         <p>泉質：<%= hotspring.quality %></p>
         <p>pH：<%= hotspring.ph %></p>
         <p>評価：</p>
