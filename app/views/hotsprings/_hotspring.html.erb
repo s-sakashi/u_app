@@ -14,7 +14,7 @@
         <p>泉質：<%= hotspring.quality %></p>
         <p>pH：<%= hotspring.ph %></p>
         <p>評価：</p>
-        <% if current_user.admin? %>
+        <% if logged_in? && current_user.admin? %>
             <p><%= link_to "編集", edit_hotspring_path(hotspring) %></p>
             <p><%= link_to "削除", hotspring, method: :delete,
                     data: { confirm: "本当に削除しますか？" } %></p>
