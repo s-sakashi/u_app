@@ -1,20 +1,40 @@
-<div class="row">
-    <section class="hotspring-top">
-        <h1><%= @hotspring.name %></h1>
-        <h2>住所：<%= @hotspring.address %></h2>
-    </section>
-    <hr>
-    <section class="hotspring_info">
-            <li><span>泉質：<%= @hotspring.quality %></li>
-            <li>pH：<%= @hotspring.ph %></li>
-        <% if logged_in? && current_user.admin? %>
-        <li><%= link_to "編集", edit_hotspring_path(@hotspring) %></li>
-        <li><%= link_to "削除", @hotspring, method: :delete,
+<div class="sidebar">
+    <div class="pageNavArea" id="nav">
+        <p class="pageNavTitle">メニュー</p>
+        <ul class="PageNav nav">
+            <li class="status"><a href="#quality">温泉情報</a></li>
+            <li class="hover"><a href="#review">レビュー</a></li>
+            <li class="hover"><a href="#access">アクセス</a></li>
+            <% if logged_in? && current_user.admin? %>
+                <li><%= link_to "編集", edit_hotspring_path(@hotspring) %></li>
+                <li><%= link_to "削除", @hotspring, method: :delete,
                     data: { confirm: "本当に削除しますか？" } %></li>
-        <% end %>
-    </section>
-    <hr>
-    <section class="hotspring-bottom">
-    <p>レビュー欄</p>
-    </section>
+            <% end %>
+        </ul>
+    </div>
+</div>
+<div class="content">
+    <div class="detailHeader">
+        <h1 class="hotspringName">
+            <span class="name"><%= @hotspring.name %></span>
+        </h1>
+        <div class="address">
+            <span>住所：<%= @hotspring.address %></span>
+        </div>
+    </div>
+   <div class="slideshow">
+        <div class="mainPhoto"></div>
+   </div>
+
+   <div id="status" class="detailSection hotspringStatus">
+        <h2 class="detailSectionTitle quality">泉質</h2>
+        <li><span>泉質：<%= @hotspring.quality %></li>
+        <li>pH：<%= @hotspring.ph %></li>
+   </div>
+    <div class="detailSection review" id="review">
+        <h2 class="detailSectionTitle">レビュー</h2>
+    </div>
+    <div class="detailSection access" id="access">
+        <h2 class="detailSectionTitle">アクセス</h2>
+    </div>
 </div>

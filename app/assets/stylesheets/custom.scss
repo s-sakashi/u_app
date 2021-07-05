@@ -30,6 +30,7 @@ $gray-medium-light: #eaeaea;
 }
 
 
+
 /* universal */
 
 body {
@@ -270,4 +271,66 @@ input {
   padding: 2%;
   margin: 10px;
   box-shadow: 0 3px 5px 0 rgba(0, 0, 0, .5);
+}
+
+/* hotspring detail */
+
+.pageNavArea {
+  padding-top: 30px;
+  position: relative;
+  .pageNavTitle {
+    font-size: 16px;
+    margin-bottom: 16px;
+    color: #000;
+    font-weight: bold;
+  }
+  .pageNav {
+    border-top: 1px solid #efefef;
+    ul {
+      list-style: none;
+    }
+  }
+}
+
+.sidebar {
+  width: 144px;
+  float:left;
+  display: block;
+}
+
+.content {
+  margin-left: 18%;
+  float: center;
+  width: 80%;
+  display: block;
+}
+
+.detailHeader {
+  .hotspringName {
+    text-align: left;
+  }
+  .address {
+    font-size: 16px;
+    color: #777;
+  }
+
+}
+  
+.detailSection {
+  padding: 40px 0;
+  .detailSectionTitle {
+    font-weight: bold;
+    font-size: 26px;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+    color: #000;
+    text-align: left;
+  }
+}
+
+
+
+
+.hotspringReview {
+  background-color: burlywood;
 }
