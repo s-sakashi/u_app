@@ -7,7 +7,7 @@
     <section class="hotspring_info">
             <li><span>泉質：<%= @hotspring.quality %></li>
             <li>pH：<%= @hotspring.ph %></li>
-        <% if current_user.admin? %>
+        <% if logged_in? && current_user.admin? %>
         <li><%= link_to "編集", edit_hotspring_path(@hotspring) %></li>
         <li><%= link_to "削除", @hotspring, method: :delete,
                     data: { confirm: "本当に削除しますか？" } %></li>
