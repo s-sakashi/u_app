@@ -329,7 +329,15 @@ input {
 }
 
 
-
+.mainPhoto {
+  padding-top: 30px;
+  position: relative;
+  img {
+      width: 95%;
+      z-index: 50;
+      display: block;
+  }
+}
 
 .hotspringReview {
   background-color: burlywood;

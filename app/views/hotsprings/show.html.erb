@@ -23,7 +23,13 @@
         </div>
     </div>
    <div class="slideshow">
-        <div class="mainPhoto"></div>
+        <div class="mainPhoto">
+            <% if @hotspring.images.attached? %>
+                <%= image_tag @hotspring.images[0] %>
+            <% else %>
+                <%= image_tag 'hotspring_default_img.png'%>
+            <% end %>
+        </div>
    </div>
 
    <div id="status" class="detailSection hotspringStatus">
@@ -36,5 +42,6 @@
     </div>
     <div class="detailSection access" id="access">
         <h2 class="detailSectionTitle">アクセス</h2>
+        <h4><%= @hotspring.address %></h4>
     </div>
 </div>
