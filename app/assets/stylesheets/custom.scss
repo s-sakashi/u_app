@@ -212,28 +212,32 @@ input {
 
 .hotspring-box {
   margin-bottom: 24px;
-  width: 100%;
   background-color: #fff;
   display: flex;
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .5);
-}
 
-.hotspring-left {
-  position: relative;
-  float: left;
-  width: 60%;
-}
-.hotspring-main-img-wrapper {
-    height: 100%;
+  .hotspring-left {
     position: relative;
-    z-index: 99;
-    display: block;
-    img {
-      height: 100%;
-      vertical-align: text-bottom;
-      position: absolute;
-      margin: auto;
-    }
+    float: left;
+    width: 60%;
+  }
+
+  .hotspring-main-img-wrapper {
+      width: 511px;
+      height: 347px;
+      position: relative;
+      z-index: 99;
+      display: block;
+      .hotspring-main-img {
+      }
+      img {
+        object-fit: cover;
+        height: 100%;
+        vertical-align: text-bottom;
+        position: absolute;
+        margin: auto;
+      }
+  }
 }
 
 
