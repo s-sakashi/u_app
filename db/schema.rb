@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_25_231826) do
+ActiveRecord::Schema.define(version: 2021_07_09_231622) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -49,6 +49,18 @@ ActiveRecord::Schema.define(version: 2021_06_25_231826) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.integer "star"
+    t.text "comment"
+    t.integer "user_id", null: false
+    t.integer "hotspring_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["hotspring_id"], name: "index_reviews_on_hotspring_id"
+    t.index ["user_id", "created_at"], name: "index_reviews_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
   create_table "rides", force: :cascade do |t|
     t.integer "ride_area", default: 0, null: false
   end
@@ -71,4 +83,6 @@ ActiveRecord::Schema.define(version: 2021_06_25_231826) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "reviews", "hotsprings"
+  add_foreign_key "reviews", "users"
 end

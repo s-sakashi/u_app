@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  star: 1
+  comment: "Nice hotspring"
+  user: sakashi
+  hotspring: 1
+  created_at: <%= 10.minutes.ago %>
+
+two:
+  star: 4
+  comment: "Bad hotspring"
+  user: kusashi
+  hotspring: 2
+  created_at: <%= 3.minutes.ago %>

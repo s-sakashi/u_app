@@ -27,3 +27,11 @@ Hotspring.create!(
     address: "愛媛県松山市道後湯之町５−６",
     ph: 9.1,
     quality: "アルカリ性単純泉")
+
+
+# ユーザーの一部を対象にレビューを生成する
+users = User.order(:created_at).take(6)
+50.times do
+  content = "ここにレビューを書く。"
+  users.each { |user| user.reviews.create!(comment: content, hotspring_id: 1) }
+end
