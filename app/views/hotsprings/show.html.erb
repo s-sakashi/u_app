@@ -46,11 +46,11 @@
                         <%= render 'shared/review_form' %>
                     </section>
                 </aside>
+                <div class="reviews-feed">
+                    <%= render @reviews %>
+                </div>
             </div>
         <% end %>
-        <div class="review-feed">
-            <p>レビューリストを表示</p>
-        </div>
     </div>
     <div class="detailSection access" id="access">
         <h2 class="detailSectionTitle">アクセス</h2>
