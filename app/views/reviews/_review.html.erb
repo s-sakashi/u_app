@@ -1,5 +1,6 @@
 <li id="review-<%= review.id %>">
   <span class="user"><%= link_to review.user.name, review.user %></span>
+  <span class="star">評価：<%= review.star %></span>
   <span class="comment"><%= review.comment %></span>
   <span class="timestamp">
     投稿日時：<%= time_ago_in_words(review.created_at) %>前

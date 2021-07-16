@@ -39,6 +39,18 @@
    </div>
     <div class="detailSection review" id="review">
         <h2 class="detailSectionTitle">レビュー</h2>
+        <% if logged_in? %>
+            <div class="row">
+                <aside class="col-md-4">
+                    <section class="review_form">
+                        <%= render 'shared/review_form' %>
+                    </section>
+                </aside>
+            </div>
+        <% end %>
+        <div class="review-feed">
+            <p>レビューリストを表示</p>
+        </div>
     </div>
     <div class="detailSection access" id="access">
         <h2 class="detailSectionTitle">アクセス</h2>

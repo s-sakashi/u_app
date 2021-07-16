@@ -7,6 +7,7 @@ class HotspringsController < ApplicationController
     
     def show
         @hotspring = Hotspring.find(params[:id])
+        @review = current_user.reviews.build if logged_in?
     end
 
     def new

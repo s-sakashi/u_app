@@ -31,7 +31,9 @@ Hotspring.create!(
 
 # ユーザーの一部を対象にレビューを生成する
 users = User.order(:created_at).take(6)
-50.times do
+hotsprings = Hotspring.all
+hotsprings.each do |hotspring|
+  star = rand(1..5)
   content = "ここにレビューを書く。"
-  users.each { |user| user.reviews.create!(comment: content, hotspring_id: 1) }
+  users.each { |user| user.reviews.create!(star: star, comment: content, hotspring_id: hotspring.id) }
 end
