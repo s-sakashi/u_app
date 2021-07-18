@@ -1,7 +1,7 @@
 <%= form_with(model: @review, local: true) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
     <div class="field">
-        <%= hidden_field_tag :hotspring_id, @hotspring.id %>
+        <%= f.hidden_field :hotspring_id, :value => @hotspring.id %>
         <%= f.select :star, {'1': 1, '2': 2, '3': 3, '4': 4, '5': 5} %> 
         <%= f.text_area :comment, placeholder: "○○温泉最高！" %>
     </div>

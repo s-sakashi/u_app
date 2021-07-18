@@ -3,6 +3,7 @@ class ReviewsController < ApplicationController
 
     def create
         @review = current_user.reviews.build(review_params)
+        @review_params = review_params
         if @review.save
             flash[:success] = "レビューの投稿が完了しました"
             redirect_to @hotspring
@@ -18,7 +19,7 @@ class ReviewsController < ApplicationController
 
     private
 
-    def review_params
-        params.require(:review).permit(:star, :comment, :hotspring_id)
-    end
+        def review_params
+            params.require(:review).permit(:star, :comment, :hotspring_id)
+        end
 end

@@ -30,7 +30,7 @@ Hotspring.create!(
 
 
 # ユーザーの一部を対象にレビューを生成する
-users = User.order(:created_at).take(6)
+users = User.order(:created_at).take(20)
 hotsprings = Hotspring.all
 hotsprings.each do |hotspring|
   star = rand(1..5)

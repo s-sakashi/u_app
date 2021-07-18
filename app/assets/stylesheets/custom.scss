@@ -384,4 +384,9 @@ aside {
 
 .reviews-feed {
   float: right;
+
+  .review-content {
+    height: 100%;
+    width: 100%;
+  }
 }

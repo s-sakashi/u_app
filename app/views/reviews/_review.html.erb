@@ -1,8 +1,17 @@
-<li id="review-<%= review.id %>">
+<ol id="review-<%= review.id %>" class="review-content">
   <span class="user"><%= link_to review.user.name, review.user %></span>
   <span class="star">評価：<%= review.star %></span>
   <span class="comment"><%= review.comment %></span>
   <span class="timestamp">
     投稿日時：<%= time_ago_in_words(review.created_at) %>前
   </span>
-</li>
+</ol>
+
+<script>
+ScrollReveal().reveal('.review-content', { 
+       duration: 2000, 
+       delay: 100,
+       reset: true,
+       viewFactor: 0.4,
+     });
+</script>
