@@ -1,13 +1,13 @@
 <div class="sidebar">
     <div class="pageNavArea" id="nav">
         <p class="pageNavTitle">メニュー</p>
-        <ul class="PageNav nav">
-            <li class="status"><a href="#status">温泉情報</a></li>
-            <li class="hover"><a href="#review">レビュー</a></li>
-            <li class="hover"><a href="#access">アクセス</a></li>
+        <ul class="pageNav nav">
+            <li class="pageNav status"><a href="#status">温泉情報</a></li>
+            <li class="pageNav hover"><a href="#review">レビュー</a></li>
+            <li class="pageNav hover"><a href="#access">アクセス</a></li>
             <% if logged_in? && current_user.admin? %>
-                <li><%= link_to "編集", edit_hotspring_path(@hotspring) %></li>
-                <li><%= link_to "削除", @hotspring, method: :delete,
+                <li class="pageNav"><%= link_to "編集", edit_hotspring_path(@hotspring) %></li>
+                <li class="pageNav"><%= link_to "削除", @hotspring, method: :delete,
                     data: { confirm: "本当に削除しますか？" } %></li>
             <% end %>
         </ul>
@@ -40,15 +40,14 @@
     <div class="detailSection review" id="review">
         <h2 class="detailSectionTitle">レビュー</h2>
         <% if logged_in? %>
-            <div class="row">
-                <aside class="col-md-4">
-                    <section class="review_form">
-                        <%= render 'shared/review_form' %>
-                    </section>
-                </aside>
-                <div class="reviews-feed">
-                    <%= render @reviews %>
-                </div>
+            <div class="review_form">
+                <%= render 'shared/review_form' %>
+            </div>
+            <div class="reviews-feed">
+                <%= render @reviews %>
+            </div>
+            <div class="moreBtn-service hover">
+                <a href="#">すべてのレビューを見る</a>
             </div>
         <% end %>
     </div>
