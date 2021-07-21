@@ -10,14 +10,25 @@
     </div>
     <div class="hotspring-right">
         <h2 class="hotspring-name"><%= link_to hotspring.name, hotspring %></h2>
-        <p>住所：<%= hotspring.address %></p>
-        <p>泉質：<%= hotspring.quality %></p>
-        <p>pH：<%= hotspring.ph %></p>
-        <p>評価：<%= hotspring.average_score %></p>
+        <p class="hotspring-address"><%= hotspring.address %></p>
+        <div class="average-score">
+            <div class="star-rating">
+                <div class="star-rating-front" style="width: <%= hotspring.percentage_score %>%">★★★★★</div>
+                <div class="star-rating-back">★★★★★</div><%= hotspring.average_score %>
+            </div>
+        </div>
+        <div class="quality-content">
+            <p>
+                <%= image_tag("elements.png", alt: "elements-icon", class: "quality-icon") %><%= hotspring.quality %>
+            </p>
+            <p>
+                <%= image_tag("ph.png", alt: "ph-icon", class: "quality-icon") %><%= hotspring.ph %>
+            </p>
+        </div>
         <% if logged_in? && current_user.admin? %>
-            <p><%= link_to "編集", edit_hotspring_path(hotspring) %></p>
-            <p><%= link_to "削除", hotspring, method: :delete,
-                    data: { confirm: "本当に削除しますか？" } %></p>
+        <%= link_to "編集", edit_hotspring_path(hotspring), class: "btn btn-primary" %>
+        <%= link_to "削除", hotspring, method: :delete,
+                    data: { confirm: "本当に削除しますか？" }, class: "btn btn-primary" %>
         <% end %>
     </div>
 </div>

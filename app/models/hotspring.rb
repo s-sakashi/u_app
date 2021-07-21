@@ -11,8 +11,16 @@ class Hotspring < ApplicationRecord
         unless self.reviews.empty?
            self.reviews.average(:star).round(1)
         else
-            3
+            2.5
         end
+    end
+
+    def percentage_score
+        unless self.reviews.empty?
+            self.reviews.average(:star).round(1).to_f*100/5
+         else
+             50.0
+         end
     end
 
     scope :search, -> (search_params) do

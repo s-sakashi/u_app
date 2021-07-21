@@ -244,22 +244,38 @@ input {
         margin: auto;
       }
   }
+  .hotspring-right {
+    padding: 10px 15px 0;
+    height: 100%;
+    float: right;
+    position: relative;
+    
+    .hotspring-name {
+      font-size: 20px;
+      text-align: left;
+      line-height: 1;
+      margin-bottom: 15px;
+    }
+
+    .hotspring-address {
+      color: #777;
+    }
+    .quality-content {
+      margin: 30px;
+      padding: 10px;
+      font-size: 14px;
+      margin: 10px;
+      img {
+        width: 10%;
+        margin: 0 10px;
+      }
+    }
+  }
 }
 
 
 
-.hotspring-right {
-  padding: 10px 15px 0;
-  height: 100%;
-  float: right;
-  position: relative;
-}
 
-.hotspring-name {
-  font-size: 17px;
-  line-height: 1;
-  margin: 10px 0;
-}
 
 
 .search-result-title {
@@ -321,6 +337,7 @@ input {
   .address {
     font-size: 16px;
     color: #777;
+    padding-bottom: 10px;
   }
 
 }
@@ -341,7 +358,8 @@ input {
   .quality-content {
     margin: 10px;
     font-size: 30px;
-    .quality-icon {
+    margin: 10px;
+    img {
       width: 50px;
       margin: 10px;
     }
@@ -420,4 +438,31 @@ input {
   }
 }
 
+/* hotspring rating */
+.average-score {
+  display: flex; // ★と点数を横並びにする
+  justify-content: start;
 
+  .star-rating {
+    display: flex;
+    position: relative;
+    width: 5em;
+    height: 10%;
+    font-size: 30px;
+
+    .star-rating-front {
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: hidden; // 指定幅からはみ出した部分を隠す。
+      white-space: nowrap; // widthが足りない時に、折り返さないようにする。
+      color: #ffcc33;
+      height: 100%;
+      padding-right: 20px;
+    }
+    .star-rating-back {
+      color: #ccc;
+      padding-right: 20px;
+    }
+  }  
+}
