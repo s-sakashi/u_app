@@ -2,7 +2,7 @@
     <div class="pageNavArea" id="nav">
         <p class="pageNavTitle">メニュー</p>
         <ul class="pageNav nav">
-            <li class="pageNav status"><a href="#status">温泉情報</a></li>
+            <li class="pageNav quality"><a href="#quality">温泉情報</a></li>
             <li class="pageNav hover"><a href="#review">レビュー</a></li>
             <li class="pageNav hover"><a href="#access">アクセス</a></li>
             <% if logged_in? && current_user.admin? %>
@@ -32,10 +32,17 @@
         </div>
    </div>
 
-   <div id="status" class="detailSection hotspringStatus">
+   <div id="quality" class="detailSection hotspringStatus">
         <h2 class="detailSectionTitle quality">泉質</h2>
-        <li><span>泉質：<%= @hotspring.quality %></li>
-        <li>pH：<%= @hotspring.ph %></li>
+        <ol class="quality-content">
+            <%= image_tag("elements.png", alt: "elements-icon", class: "quality-icon") %>
+            <span><%= @hotspring.quality %>
+        </ol>
+        
+        <ol class="quality-content">
+            <%= image_tag("ph.png", alt: "ph-icon", class: "quality-icon") %>
+            <%= @hotspring.ph %>
+        </ol>
    </div>
     <div class="detailSection review" id="review">
         <h2 class="detailSectionTitle">レビュー</h2>

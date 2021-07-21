@@ -337,8 +337,16 @@ input {
     color: #000;
     text-align: left;
   }
-}
 
+  .quality-content {
+    margin: 10px;
+    font-size: 30px;
+    .quality-icon {
+      width: 50px;
+      margin: 10px;
+    }
+  }
+}
 
 .mainPhoto {
   padding-top: 30px;
