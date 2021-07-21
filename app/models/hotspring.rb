@@ -7,6 +7,13 @@ class Hotspring < ApplicationRecord
         greater_than_or_equal_to: 0, less_than_or_equal_to: 14}
     validates :quality, presence: true, length: { maximum: 10 }
 
+    def average_score
+        unless self.reviews.empty?
+           self.reviews.average(:star).round(1)
+        else
+            3
+        end
+    end
 
     scope :search, -> (search_params) do
         return if search_params.blank?
