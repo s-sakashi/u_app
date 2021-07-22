@@ -2,6 +2,7 @@ class HomePagesController < ApplicationController
   def home
     @search_params = hotspring_search_params
     @hotsprings = Hotspring.search(@search_params)
+    @top_three_hotsprings = Hotspring.all.order(score: "DESC").take(3)
   end
 
   def about

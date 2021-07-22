@@ -4,6 +4,9 @@ class ReviewsController < ApplicationController
     def create
         @review = current_user.reviews.build(review_params)
         if @review.save
+            @hotspring = Hotspring.find(@review.hotspring_id)
+            @hotspring.score = @hotspring.average_score
+            @hotspring.save
             flash[:success] = "レビューの投稿が完了しました"
             redirect_to hotspring_url(@review.hotspring_id, anchor: 'review')
         else

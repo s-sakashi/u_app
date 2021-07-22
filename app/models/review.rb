@@ -1,6 +1,6 @@
 class Review < ApplicationRecord
-  belongs_to :user, dependent: :destroy
-  belongs_to :hotspring, dependent: :destroy
+  belongs_to :user
+  belongs_to :hotspring
   default_scope -> { order(created_at: :desc) }
   validates :user_id, presence: true
   validates :hotspring_id, presence: true

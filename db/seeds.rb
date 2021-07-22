@@ -26,7 +26,8 @@ Hotspring.create!(
     name: "道後温泉",
     address: "愛媛県松山市道後湯之町５−６",
     ph: 9.1,
-    quality: "アルカリ性単純泉")
+    quality: "アルカリ性単純泉",
+    score: 2.5)
 
 
 # ユーザーの一部を対象にレビューを生成する
@@ -37,3 +38,4 @@ hotsprings.each do |hotspring|
   content = "ここにレビューを書く。"
   users.each { |user| user.reviews.create!(star: star, comment: content, hotspring_id: hotspring.id) }
 end
+
