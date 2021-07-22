@@ -274,16 +274,12 @@ input {
 }
 
 
-
-
-
-
+/* search form */
 .search-result-title {
   margin-top: 40px;
-  text-align: left;
+text-align: left;
 }
 
-/* search form */
 .form-box {
   position: fixed;
   background-color: #fff;
@@ -298,6 +294,13 @@ input {
   margin: 10px;
   box-shadow: 0 3px 5px 0 rgba(0, 0, 0, .5);
 }
+
+/* top page section */
+.hotspring-ranking {
+  width: 80%;
+  margin: 0 10%;
+}
+
 
 /* hotspring detail */
 
