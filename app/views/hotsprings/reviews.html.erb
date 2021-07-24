@@ -1,0 +1,14 @@
+<div class="sidebar">
+    <div class="pageNavArea" id="nav">
+        <p class="pageNavTitle">メニュー</p>
+        <ul class="nav">
+            <li class="active pageNav"><span>レビュー</span></li>
+            <li class="pageNav hover"><%= link_to "施設トップへ", @hotspring %></li>
+        </ul>
+    </div>
+</div>
+<div class="content">
+    <%= will_paginate @reviews %>
+    <%= render @reviews %>
+    <%= will_paginate @reviews %>
+</div>

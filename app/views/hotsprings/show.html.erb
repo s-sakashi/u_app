@@ -1,10 +1,10 @@
 <div class="sidebar">
     <div class="pageNavArea" id="nav">
         <p class="pageNavTitle">メニュー</p>
-        <ul class="pageNav nav">
-            <li class="pageNav quality"><a href="#quality">温泉情報</a></li>
-            <li class="pageNav hover"><a href="#review">レビュー</a></li>
-            <li class="pageNav hover"><a href="#access">アクセス</a></li>
+        <ul class="nav">
+            <li class="pageNav"><a href="#quality">温泉情報</a></li>
+            <li class="pageNav"><a href="#review">レビュー</a></li>
+            <li class="pageNav"><a href="#access">アクセス</a></li>
             <% if logged_in? && current_user.admin? %>
                 <li class="pageNav"><%= link_to "編集", edit_hotspring_path(@hotspring) %></li>
                 <li class="pageNav"><%= link_to "削除", @hotspring, method: :delete,
@@ -61,7 +61,7 @@
             <%= render @reviews %>
         </div>
         <div class="moreBtn-service hover">
-            <a href="#">すべてのレビューを見る</a>
+            <%= link_to "すべてのレビューを見る", "#{@hotspring.id}/reviews" %>
         </div>
     </div>
     <div class="detailSection access" id="access">

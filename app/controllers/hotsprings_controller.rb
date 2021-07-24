@@ -45,6 +45,11 @@ class HotspringsController < ApplicationController
         redirect_to root_url
     end
 
+    def reviews
+        @hotspring = Hotspring.find(params[:id])
+        @reviews = @hotspring.reviews.paginate(page: params[:page])
+    end
+
 
     private
 
