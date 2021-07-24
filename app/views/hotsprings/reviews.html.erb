@@ -8,7 +8,14 @@
     </div>
 </div>
 <div class="content">
-    <%= will_paginate @reviews %>
-    <%= render @reviews %>
-    <%= will_paginate @reviews %>
+    <div class="detailSection review">
+        <div class="review-content">
+            <%= render "hotspring_detail_header" %>
+            <%= will_paginate @reviews %>
+            <div class="reviews-feed">
+                <%= render @reviews %>
+            </div>
+            <%= will_paginate @reviews %>
+        </div>
+    </div>
 </div>

@@ -14,21 +14,8 @@
     </div>
 </div>
 <div class="content">
-    <div class="detailHeader">
-        <h1 class="hotspringName">
-            <span class="name"><%= @hotspring.name %></span>
-        </h1>
-        <div class="address">
-            <span>住所：<%= @hotspring.address %></span>
-        </div>
-        <div class="average-score">
-            <div class="star-rating">
-                <div class="star-rating-front" style="width: <%= @hotspring.percentage_score %>%">★★★★★</div>
-                <div class="star-rating-back">★★★★★</div><%= @hotspring.average_score %>
-            </div>
-        </div>
-    </div>
-   <div class="slideshow">
+    <%= render "hotspring_detail_header" %>
+    <div class="slideshow">
         <div class="mainPhoto">
             <% if @hotspring.images.attached? %>
                 <%= image_tag @hotspring.images[0] %>
@@ -36,7 +23,7 @@
                 <%= image_tag 'hotspring_default_img.png'%>
             <% end %>
         </div>
-   </div>
+    </div>
 
    <div id="quality" class="detailSection hotspringStatus">
         <h2 class="detailSectionTitle quality">泉質</h2>
@@ -59,9 +46,9 @@
         <% end %>
         <div class="reviews-feed">
             <%= render @reviews %>
-        </div>
-        <div class="moreBtn-service hover">
-            <%= link_to "すべてのレビューを見る", "#{@hotspring.id}/reviews" %>
+            <div class="moreBtn-service hover">
+                <%= link_to "すべてのレビューを見る", "#{@hotspring.id}/reviews" %>
+            </div>
         </div>
     </div>
     <div class="detailSection access" id="access">

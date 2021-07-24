@@ -1,0 +1,14 @@
+<div class="detailHeader">
+    <h1 class="hotspringName">
+        <span class="name"><%= @hotspring.name %></span>
+    </h1>
+    <div class="address">
+        <span>住所：<%= @hotspring.address %></span>
+    </div>
+    <div class="average-score">
+        <div class="star-rating">
+            <div class="star-rating-front" style="width: <%= @hotspring.percentage_score %>%">★★★★★</div>
+            <div class="star-rating-back">★★★★★</div><%= @hotspring.average_score %>
+        </div>
+    </div>
+</div>
