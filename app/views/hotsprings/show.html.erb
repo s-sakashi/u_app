@@ -58,5 +58,6 @@
     <div class="detailSection access" id="access">
         <h2 class="detailSectionTitle">アクセス</h2>
         <h4><%= @hotspring.address %></h4>
+        <iframe src="https://maps.google.co.jp/maps?output=embed&q=<%= @hotspring.address %>", class="google-maps"></iframe>
     </div>
 </div>
