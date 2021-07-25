@@ -1,9 +1,31 @@
-<%= form_with(model: @review, local: true) do |f| %>
-    <%= render 'shared/error_messages', object: f.object %>
-    <div class="field">
-        <%= f.hidden_field :hotspring_id, :value => @hotspring.id %>
-        <%= f.select :star, {'1': 1, '2': 2, '3': 3, '4': 4, '5': 5} %> 
-        <%= f.text_area :comment, placeholder: "○○温泉最高！" %>
+<div class="modal" id="post-review" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="modal-label"><%= @hotspring.name %></h4>
+            </div>
+
+            <!-- モーダルのボディ -->
+            <%= form_with(model: @review, local: true) do |f| %>
+                <div class="modal-body">
+                    <%= render 'shared/error_messages', object: f.object %>
+                    <div class="field">
+                        <%= f.hidden_field :hotspring_id, :value => @hotspring.id %>
+                        <p>評価</p>
+                        <%= f.select :star, {'1': 1, '2': 2, '3': 3, '4': 4, '5': 5} %> 
+                        <p>レビュー</p>
+                        <%= f.text_area :comment, placeholder: "○○温泉最高！" %>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <%= f.submit "投稿", class: "btn btn-primary" %>
+                </div>
+            <% end %>
+        </div>
     </div>
-    <%= f.submit "投稿", class: "btn btn-primary" %>
-<% end %>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
