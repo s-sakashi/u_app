@@ -47,6 +47,7 @@ class HotspringsController < ApplicationController
 
     def reviews
         @hotspring = Hotspring.find(params[:id])
+        @review = current_user.reviews.build if logged_in?
         @reviews = @hotspring.reviews.paginate(page: params[:page])
     end
 

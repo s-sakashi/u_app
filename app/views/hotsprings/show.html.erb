@@ -42,7 +42,7 @@
         <% if logged_in? %>
             <div class="review_form">
                 <button class="btn btn-primary" data-toggle="modal" data-target="#post-review">
-                    <span class="material-icons-outlined">投稿</span>
+                    <i class="fas fa-pen"></i>　投稿
                 </button>
             </div>
             <!-- レビュー投稿モーダル -->
@@ -51,7 +51,7 @@
         <div class="reviews-feed">
             <%= render @reviews %>
             <div class="moreBtn-service hover">
-                <%= link_to "すべてのレビューを見る", "#{@hotspring.id}/reviews" %>
+                <i class="fas fa-chevron-right"></i><%= link_to " すべてのレビューを見る", "#{@hotspring.id}/reviews" %>
             </div>
         </div>
     </div>
