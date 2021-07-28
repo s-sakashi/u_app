@@ -13,13 +13,15 @@
         <div class="review-content">
             <%= render "hotspring_detail_header" %>
             <% if logged_in? %>
-                <div class="review_form">
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#post-review">
-                        <i class="fas fa-pen"></i>　投稿
-                    </button>
-                </div>
-                <!-- レビュー投稿モーダル -->
-                <%= render "shared/review_form" %>
+                <% unless posted_review?(@hotspring.id) %>
+                    <div class="review_form">
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#post-review">
+                            <i class="fas fa-pen"></i>　投稿
+                        </button>
+                    </div>
+                    <!-- レビュー投稿モーダル -->
+                    <%= render "shared/review_form" %>
+                <% end %>
             <% end %>
             <div class="reviews-feed">
                 <%= will_paginate @reviews %>
