@@ -364,7 +364,7 @@ text-align: left;
     color: #000;
     text-align: left;
   }
-
+  
   .quality-content {
     margin: 10px;
     font-size: 30px;
@@ -373,6 +373,11 @@ text-align: left;
       width: 50px;
       margin: 10px;
     }
+  }
+  .empty_reviews {
+    text-align: center;
+    display: block;
+    margin: 10px;
   }
   .google-maps {
     width: 100%;
@@ -384,9 +389,9 @@ text-align: left;
   padding-top: 30px;
   position: relative;
   img {
-      width: 95%;
-      z-index: 50;
-      display: block;
+    width: 95%;
+    z-index: 50;
+    display: block;
   }
 }
 
@@ -424,6 +429,10 @@ text-align: left;
       color: $gray-light;
       display: block;
       margin-left: 60px;
+    }
+    .review_edit {
+      display: block;
+      margin-left: 80px;
     }
   }
   .reviews-feed {

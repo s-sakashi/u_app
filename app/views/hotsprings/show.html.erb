@@ -40,20 +40,26 @@
     <div class="detailSection review" id="review">
         <h2 class="detailSectionTitle">レビュー</h2>
         <% if logged_in? %>
-            <div class="review_form">
-                <button class="btn btn-primary" data-toggle="modal" data-target="#post-review">
-                    <i class="fas fa-pen"></i>　投稿
-                </button>
-            </div>
-            <!-- レビュー投稿モーダル -->
-            <%= render "shared/review_form" %>
+            <% unless posted_review?(@hotspring.id) %>
+                <div class="review_form">
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#post-review">
+                        <i class="fas fa-pen"></i>　投稿
+                    </button>
+                </div>
+                <!-- レビュー投稿モーダル -->
+                <%= render "shared/review_form" %>
+            <% end %>
         <% end %>
-        <div class="reviews-feed">
-            <%= render @reviews %>
-            <div class="moreBtn-service hover">
-                <i class="fas fa-chevron-right"></i><%= link_to " すべてのレビューを見る", "#{@hotspring.id}/reviews" %>
+        <% if @reviews.empty? %>
+            <span class="empty_reviews">レビューはありません</span>
+        <% else %>
+            <div class="reviews-feed">
+                <%= render @reviews %>
+                <div class="moreBtn-service hover">
+                    <i class="fas fa-chevron-right"></i><%= link_to " すべてのレビューを見る", "#{@hotspring.id}/reviews" %>
+                </div>
             </div>
-        </div>
+        <% end %>
     </div>
     <div class="detailSection access" id="access">
         <h2 class="detailSectionTitle">アクセス</h2>

@@ -58,4 +58,10 @@ module SessionsHelper
         session[:forwarding_url] = request.original_url if request.get?
     end
 
+
+    # 現在のユーザーがレビューを投稿していればtrueを返す
+    def posted_review?(hotspring_id)
+        !current_user.reviews.find_by(hotspring_id: hotspring_id).nil?
+    end
+
 end

@@ -6,6 +6,12 @@
     <span class="timestamp">
         投稿日時：<%= time_ago_in_words(review.created_at) %>前
     </span>
+    <% if current_user?(review.user) %>
+        <div class="review_edit">
+            <%= link_to "編集", "#" %>
+            <%= link_to "削除", "#" %>
+        </div>
+    <% end %>
     </ol>
 </div>
 
