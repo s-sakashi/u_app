@@ -445,6 +445,13 @@ text-align: left;
       height: 100%;
       width: 100%;
       border-bottom: 1px solid #efefef;
+      .edit-review-button {
+        display: flex;
+        padding-left: 10%;
+        .btn {
+          margin: 5px;
+        }
+      }
     }
   }
 
