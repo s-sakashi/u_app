@@ -15,7 +15,27 @@ class ReviewsController < ApplicationController
         end
     end
 
+    def edit
+        @review = Review.find(params[:id])
+        @hotspring = @review.hotspring
+    end
+    
+    def update
+        @review = Review.find(params[:id])
+        if @review.update(review_params)
+            flash[:success] = "更新完了"
+            redirect_to hotspring_url(hotspring_id, anchor: 'review')
+        else
+            render 'edit'
+        end
+    end
+
     def destroy
+        @review = Review.find(params[:id])
+        hotspring_id = @review.hotspring_id
+        @review.destroy
+        flash[:success] = "削除完了"
+        redirect_to hotspring_url(hotspring_id, anchor: 'review')
     end
 
 

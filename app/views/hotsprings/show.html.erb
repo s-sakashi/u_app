@@ -47,7 +47,8 @@
                     </button>
                 </div>
                 <!-- レビュー投稿モーダル -->
-                <%= render "shared/review_form" %>
+                <% provide(:reviews_button, '投稿') %>
+                <%= render "reviews/form" %>
             <% end %>
         <% end %>
         <% if @reviews.empty? %>

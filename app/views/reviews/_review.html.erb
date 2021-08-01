@@ -8,8 +8,16 @@
     </span>
     <% if current_user?(review.user) %>
         <div class="review_edit">
-            <%= link_to "編集", "#" %>
-            <%= link_to "削除", "#" %>
+            <div class="review_form">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#post-review">
+                    <i class="fas fa-pen"></i>  編集
+                </button>
+            </div>
+            <!-- レビュー投稿モーダル -->
+            <% provide(:reviews_button, '更新') %>
+            <%= render "reviews/form" %>
+            <%= link_to "削除", review, method: :delete,
+                    data: { confirm: "本当に削除しますか？" } %>
         </div>
     <% end %>
     </ol>

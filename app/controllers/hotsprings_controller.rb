@@ -10,7 +10,11 @@ class HotspringsController < ApplicationController
         @hotspring = Hotspring.find(params[:id])
         @reviews = Review.find_by_sql([query, @hotspring.id, current_user.id])
                             .first(3)
-        @review = current_user.reviews.build if logged_in?
+        if posted_review?(@hotspring.id)
+            @review = current_user.reviews.first
+        else
+            @review = current_user.reviews.build if logged_in?
+        end
     end
 
     def new
