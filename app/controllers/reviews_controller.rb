@@ -15,10 +15,10 @@ class ReviewsController < ApplicationController
         end
     end
 
-    def edit
-        @review = Review.find(params[:id])
-        @hotspring = @review.hotspring
-    end
+    # def edit
+    #     @hotspring = Hotspring.find(params[:hotspring_id])
+    #     @review = Review.find_by(hotspring_id: @hotspring.id, user_id: current_user.id)
+    # end
     
     def update
         @review = Review.find(params[:id])

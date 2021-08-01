@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :users
   resources :hotsprings do
     collection do
-      get ':id/reviews', to: 'hotsprings#reviews'
+      get ':hotspring_id/reviews', to: 'hotsprings#reviews'
     end
   end
   resources :account_activations, only: [:edit]
