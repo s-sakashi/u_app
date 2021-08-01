@@ -16,8 +16,8 @@
             <!-- レビュー投稿モーダル -->
             <% provide(:reviews_button, '更新') %>
             <%= render "reviews/form" %>
-            <%= link_to "削除", review, method: :delete,
-                    data: { confirm: "本当に削除しますか？" } %>
+            <%= link_to "削除", review, method: :delete, data: { confirm: "本当に削除しますか？" },
+                        class: "btn btn-primary" %>
         </div>
     <% end %>
     </ol>

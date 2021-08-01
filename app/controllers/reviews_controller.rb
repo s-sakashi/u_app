@@ -24,7 +24,7 @@ class ReviewsController < ApplicationController
         @review = Review.find(params[:id])
         if @review.update(review_params)
             flash[:success] = "更新完了"
-            redirect_to hotspring_url(hotspring_id, anchor: 'review')
+            redirect_to hotspring_url(@review.hotspring_id, anchor: 'review')
         else
             render 'edit'
         end
