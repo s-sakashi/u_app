@@ -53,7 +53,11 @@ class HotspringsController < ApplicationController
 
     def reviews
         @hotspring = Hotspring.find(params[:hotspring_id])
-        @review = current_user.reviews.build if logged_in?
+        if posted_review?(@hotspring.id)
+            @review = Review.find_by(hotspring_id: @hotspring.id, user_id: current_user.id)
+        else
+            @review = current_user.reviews.build if logged_in?
+        end
         query = "SELECT * FROM reviews WHERE hotspring_id = ? ORDER BY user_id = ? DESC"
         @reviews = Review.paginate_by_sql(
             [query, @hotspring.id, current_user.id],
